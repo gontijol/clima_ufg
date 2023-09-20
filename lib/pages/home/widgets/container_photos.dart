@@ -23,6 +23,30 @@ class ContainerPhoto extends GetWidget {
         ),
         borderRadius: BorderRadius.circular(50.0),
       ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          Opacity(
+            opacity: 0.9,
+            child: Container(
+              height: 60,
+              width: 110,
+              decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    bottomRight: Radius.circular(50.0),
+                    topLeft: Radius.circular(50.0),
+                  ),
+                  gradient: LinearGradient(
+                    colors: [
+                      defaultBlue,
+                      defaultGreen,
+                    ],
+                  )),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
