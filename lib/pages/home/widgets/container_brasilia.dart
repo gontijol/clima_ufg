@@ -3,8 +3,8 @@ import 'package:clima_ufg/pages/home/controller.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
-class ContainerPhoto extends GetWidget<HomeController> {
-  const ContainerPhoto({
+class ContainerBrasilia extends GetWidget<HomeController> {
+  const ContainerBrasilia({
     super.key,
   });
 
@@ -20,7 +20,7 @@ class ContainerPhoto extends GetWidget<HomeController> {
         image: DecorationImage(
           fit: BoxFit.cover,
           image: Image.network(
-                  'https://www.qualviagem.com.br/wp-content/uploads/2015/12/pra%C3%A7a-goiania-goias.jpg')
+                  'https://www.melhoresdestinos.com.br/wp-content/uploads/2019/02/passagens-aereas-brasilia-capa2019-01.jpg')
               .image,
         ),
         borderRadius: BorderRadius.circular(50.0),
