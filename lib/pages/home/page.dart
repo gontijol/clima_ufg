@@ -1,4 +1,3 @@
-import 'package:clima_ufg/core/colors.dart';
 import 'package:clima_ufg/pages/home/widgets/container_photos.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -35,10 +34,9 @@ class HomePage extends GetView {
                 ),
               ],
             ),
-            Container(
+            SizedBox(
               width: Get.width,
               height: Get.height * 0.3,
-              color: defaultBlue.withOpacity(0.0),
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: 5,
