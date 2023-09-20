@@ -38,7 +38,7 @@ Este projeto está em andamento, e contribuições são bem-vindas. Se você des
 
 ## Licença
 
-Este projeto é licenciado sob os termos da [Licença MIT](LICENSE), o que significa que você pode usá-lo e modificá-lo livremente, desde que atribua a devida autoria e mantenha a mesma licença ao distribuir o código.
+Você pode usar e modificar o projeto livremente, desde que atribua a devida autoria e mantenha a mesma licença ao distribuir o código.
 
 ---
 
