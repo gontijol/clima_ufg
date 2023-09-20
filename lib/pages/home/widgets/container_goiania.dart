@@ -13,7 +13,7 @@ class ContainerGoiania extends GetWidget<HomeController> {
     Get.lazyPut(() => HomeController());
     return Container(
       margin: const EdgeInsets.all(10.0),
-      height: 100,
+      height: 200,
       width: 300,
       decoration: BoxDecoration(
         color: defaultBlue.withOpacity(0.5),
