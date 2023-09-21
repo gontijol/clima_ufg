@@ -1,6 +1,7 @@
 import 'package:clima_ufg/api/api_rest.dart';
 import 'package:clima_ufg/pages/home/models.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 
 import '../selected_city/controller.dart';
@@ -17,6 +18,7 @@ class HomeController extends GetxController {
     temp.value = 30.0;
     menuIndex.value = 1;
     fetchWeatherData('goiania');
+    FlutterNativeSplash.remove();
     super.onInit();
   }
 
