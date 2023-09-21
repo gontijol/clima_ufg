@@ -41,14 +41,14 @@ class ContainerBrasilia extends GetWidget<HomeController> {
                 ),
                 gradient: LinearGradient(
                   colors: [
-                    controller.temp < 30 ? defaultBlue : defaultRed,
-                    controller.temp < 30 ? defaultGreen : defaultYellow,
+                    controller.gynTemp < 30 ? defaultBlue : defaultRed,
+                    controller.gynTemp < 30 ? defaultGreen : defaultYellow,
                   ],
                 ),
               ),
               child: Center(
                 child: Obx(() => Text(
-                      '${controller.temp}°',
+                      '${controller.gynTemp}°',
                       style: const TextStyle(
                           fontSize: 25.0,
                           fontWeight: FontWeight.bold,
