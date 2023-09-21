@@ -25,50 +25,52 @@ class ContainerBrasilia extends GetWidget<HomeController> {
         ),
         borderRadius: BorderRadius.circular(50.0),
       ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: [
-          Opacity(
-            opacity: 0.9,
-            child: Container(
-              height: 60,
-              width: 120,
-              decoration: BoxDecoration(
-                borderRadius: const BorderRadius.only(
-                  bottomRight: Radius.circular(50.0),
-                  topLeft: Radius.circular(50.0),
-                ),
-                gradient: LinearGradient(
-                  colors: [
-                    controller.temp < 30 ? defaultBlue : defaultRed,
-                    controller.temp < 30 ? defaultGreen : defaultYellow,
-                  ],
-                ),
-              ),
-              child: Center(
-                child: Obx(() => Text(
-                      '${controller.temp}°',
-                      style: const TextStyle(
-                          fontSize: 25.0,
-                          fontWeight: FontWeight.bold,
-                          color: defaultWhite,
-                          shadows: [
-                            Shadow(
-                              color: defaultBlack,
-                              blurRadius: 10.0,
-                              offset: Offset(
-                                2.0,
-                                2.0,
-                              ),
-                            )
-                          ]),
-                    )),
-              ),
-            ),
-          ),
-        ],
-      ),
+      // child: Column(
+      //   mainAxisAlignment: MainAxisAlignment.end,
+      //   crossAxisAlignment: CrossAxisAlignment.end,
+      //   children: [
+      //     Opacity(
+      //       opacity: 0.9,
+      //       child: Container(
+      //         height: 60,
+      //         width: 120,
+      //         decoration: BoxDecoration(
+      //           borderRadius: const BorderRadius.only(
+      //             bottomRight: Radius.circular(50.0),
+      //             topLeft: Radius.circular(50.0),
+      //           ),
+      //           gradient: LinearGradient(
+      //             colors: [
+      //               controller.humidity.value < 30 ? defaultBlue : defaultRed,
+      //               controller.humidity.value < 30
+      //                   ? defaultGreen
+      //                   : defaultYellow,
+      //             ],
+      //           ),
+      //         ),
+      //         child: Center(
+      //           child: Obx(() => Text(
+      //                 '${controller.humidity.value}%',
+      //                 style: const TextStyle(
+      //                     fontSize: 25.0,
+      //                     fontWeight: FontWeight.bold,
+      //                     color: defaultWhite,
+      //                     shadows: [
+      //                       Shadow(
+      //                         color: defaultBlack,
+      //                         blurRadius: 10.0,
+      //                         offset: Offset(
+      //                           2.0,
+      //                           2.0,
+      //                         ),
+      //                       )
+      //                     ]),
+      //               )),
+      //         ),
+      //       ),
+      //     ),
+      //   ],
+      // ),
     );
   }
 }

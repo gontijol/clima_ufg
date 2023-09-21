@@ -1,11 +1,9 @@
 import 'package:clima_ufg/core/colors.dart';
 import 'package:clima_ufg/pages/home/controller.dart';
 import 'package:clima_ufg/pages/home/widgets/city_info.dart';
-import 'package:clima_ufg/pages/home/widgets/container_brasilia.dart';
 import 'package:clima_ufg/pages/home/widgets/container_goiania.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends GetView<HomeController> {
   const HomePage({super.key});
@@ -64,14 +62,16 @@ class HomePage extends GetView<HomeController> {
                       borderRadius: BorderRadius.circular(30.0),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 15.0, vertical: 8.0),
+                      padding: const EdgeInsets.only(left: 20.0),
                       child: TextFormField(
+                        controller: controller.cityNameSearch.value,
                         cursorColor: defaultBlue,
-                        decoration: const InputDecoration(
+                        decoration: InputDecoration(
                           suffixIcon: Padding(
-                            padding: EdgeInsets.only(left: 20.0),
-                            child: Icon(Icons.search, color: defaultGreen),
+                            padding: const EdgeInsets.only(left: 20.0),
+                            child: IconButton(
+                                onPressed: () => controller.selectedCity(),
+                                icon: const Icon(Icons.search)),
                           ),
                           border: InputBorder.none,
                         ),
@@ -82,7 +82,7 @@ class HomePage extends GetView<HomeController> {
                     ),
                   ),
                 ),
-              )
+              ),
             ],
           ),
         ),
@@ -94,7 +94,7 @@ class HomePage extends GetView<HomeController> {
               const SizedBox(height: 20.0),
               const CityInfo(),
               InkWell(
-                onTap: () => {Get.toNamed('/selected_city')},
+                // onTap: () => controller.selectedCity(),
                 child: SizedBox(
                   width: Get.width,
                   height: Get.height * 0.3,
@@ -102,37 +102,39 @@ class HomePage extends GetView<HomeController> {
                       scrollDirection: Axis.horizontal,
                       itemCount: 5,
                       itemBuilder: (context, index) {
-                        return const ContainerGoiania();
+                        return ContainerGoiania(
+                          tempC: controller.temp.value,
+                        );
                       }),
                 ),
               ),
               //Brasilia
               const SizedBox(height: 20.0),
-              Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Image.asset('assets/pin.png'),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Text(
-                      'Brasília',
-                      style: GoogleFonts.alatsi(fontSize: 20.0),
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                width: Get.width,
-                height: Get.height * 0.3,
-                child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: 5,
-                    itemBuilder: (context, index) {
-                      return const ContainerBrasilia();
-                    }),
-              ),
+              // Row(
+              //   children: [
+              //     Padding(
+              //       padding: const EdgeInsets.all(10.0),
+              //       child: Image.asset('assets/pin.png'),
+              //     ),
+              //     Padding(
+              //       padding: const EdgeInsets.all(10.0),
+              //       child: Text(
+              //         'Brasília',
+              //         style: GoogleFonts.alatsi(fontSize: 20.0),
+              //       ),
+              //     ),
+              //   ],
+              // ),
+              // SizedBox(
+              //   width: Get.width,
+              //   height: Get.height * 0.3,
+              //   child: ListView.builder(
+              //       scrollDirection: Axis.horizontal,
+              //       itemCount: 5,
+              //       itemBuilder: (context, index) {
+              //         return const ContainerBrasilia();
+              //       }),
+              // ),
             ],
           ),
         ),
