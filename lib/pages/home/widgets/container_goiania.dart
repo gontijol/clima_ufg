@@ -12,8 +12,8 @@ class ContainerGoiania extends GetWidget<HomeController> {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.all(10.0),
-      height: 200,
-      width: 300,
+      height: Get.height * 0.3,
+      width: Get.width * 0.9,
       decoration: BoxDecoration(
         color: defaultBlue.withOpacity(0.5),
         image: DecorationImage(
