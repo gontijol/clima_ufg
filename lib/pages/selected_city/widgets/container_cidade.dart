@@ -1,10 +1,10 @@
 import 'package:clima_ufg/core/colors.dart';
-import 'package:clima_ufg/pages/home/controller.dart';
+import 'package:clima_ufg/pages/selected_city/controller.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
-class ContainerGoiania extends GetWidget<HomeController> {
-  const ContainerGoiania({
+class ContainerCidade extends GetWidget<SelectedCityController> {
+  const ContainerCidade({
     super.key,
   });
 
@@ -40,14 +40,14 @@ class ContainerGoiania extends GetWidget<HomeController> {
                 ),
                 gradient: LinearGradient(
                   colors: [
-                    controller.temp < 30 ? defaultBlue : defaultRed,
-                    controller.temp < 30 ? defaultGreen : defaultYellow,
+                    controller.tempC < 30 ? defaultBlue : defaultRed,
+                    controller.tempC < 30 ? defaultGreen : defaultYellow,
                   ],
                 ),
               ),
               child: Center(
                 child: Obx(() => Text(
-                      '${controller.temp.value}°',
+                      '${controller.tempC.value}°',
                       style: const TextStyle(
                           fontSize: 25.0,
                           fontWeight: FontWeight.bold,

@@ -7,22 +7,21 @@ import 'package:get/get.dart';
 import '../selected_city/controller.dart';
 
 class HomeController extends GetxController {
-  final temp = 30.0.obs;
+  final temp = 0.0.obs;
   final menuIndex = 1.obs;
 
   final ApiRest apiRest = ApiRest();
   final cityNameSearch = TextEditingController().obs;
 
   @override
-  void onInit() {
-    temp.value = 30.0;
+  void onInit() async {
     menuIndex.value = 1;
-    fetchWeatherData('goiania');
     FlutterNativeSplash.remove();
+    await fetchWeatherData('sao paulo');
     super.onInit();
   }
 
-  void fetchWeatherData(String cityName) async {
+  fetchWeatherData(String cityName) async {
     try {
       final WeatherModel weatherData = await apiRest.getWeatherData(cityName);
       final current = weatherData.current;

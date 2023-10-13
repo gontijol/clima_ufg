@@ -7,6 +7,7 @@ class SelectedCityController extends GetxController {
   final uvIndex = 0.0.obs;
   final feelsLike = 0.0.obs;
   final tempC = 30.0.obs;
+  final city = 'Goiania'.obs;
 
   final preciptation = 0.obs;
   final ApiRest apiRest = ApiRest();
@@ -14,12 +15,11 @@ class SelectedCityController extends GetxController {
   @override
   void onInit() async {
     // TODO: implement onInit
-    // fetchWeatherData();
-    Get.reload();
+    await fetchWeatherData(city.value);
     super.onInit();
   }
 
-  void fetchWeatherData(String cityName) async {
+  fetchWeatherData(String cityName) async {
     try {
       final WeatherModel weatherData = await apiRest.getWeatherData(cityName);
       final current = weatherData.current;
@@ -28,6 +28,7 @@ class SelectedCityController extends GetxController {
       preciptation.value = current.precipMm.toInt();
       feelsLike.value = current.feelslikeC;
       tempC.value = current.tempC;
+      city.value = weatherData.location.name;
       print('temperatura atual ${current.tempC}');
     } catch (e) {
       print('Erro ao buscar os dados $e');

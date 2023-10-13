@@ -100,41 +100,14 @@ class HomePage extends GetView<HomeController> {
                   height: Get.height * 0.3,
                   child: ListView.builder(
                       scrollDirection: Axis.horizontal,
-                      itemCount: 5,
+                      itemCount: 1,
                       itemBuilder: (context, index) {
-                        return ContainerGoiania(
-                          tempC: controller.temp.value,
-                        );
+                        return const ContainerGoiania();
                       }),
                 ),
               ),
               //Brasilia
               const SizedBox(height: 20.0),
-              // Row(
-              //   children: [
-              //     Padding(
-              //       padding: const EdgeInsets.all(10.0),
-              //       child: Image.asset('assets/pin.png'),
-              //     ),
-              //     Padding(
-              //       padding: const EdgeInsets.all(10.0),
-              //       child: Text(
-              //         'Brasília',
-              //         style: GoogleFonts.alatsi(fontSize: 20.0),
-              //       ),
-              //     ),
-              //   ],
-              // ),
-              // SizedBox(
-              //   width: Get.width,
-              //   height: Get.height * 0.3,
-              //   child: ListView.builder(
-              //       scrollDirection: Axis.horizontal,
-              //       itemCount: 5,
-              //       itemBuilder: (context, index) {
-              //         return const ContainerBrasilia();
-              //       }),
-              // ),
             ],
           ),
         ),

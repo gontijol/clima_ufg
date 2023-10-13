@@ -1,7 +1,7 @@
 import 'package:clima_ufg/core/colors.dart';
-import 'package:clima_ufg/pages/home/widgets/city_info.dart';
-import 'package:clima_ufg/pages/home/widgets/container_goiania.dart';
 import 'package:clima_ufg/pages/selected_city/controller.dart';
+import 'package:clima_ufg/pages/selected_city/widgets/container_cidade.dart';
+import 'package:clima_ufg/pages/selected_city/widgets/selected_city_info.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -41,10 +41,8 @@ class SelectedCity extends GetView<SelectedCityController> {
                       padding: const EdgeInsets.all(20.0),
                       child: Column(
                         children: [
-                          const CityInfo(),
-                          Obx(() => ContainerGoiania(
-                                tempC: controller.tempC.value,
-                              )),
+                          const SelectedCityInfo(),
+                          const ContainerCidade(),
                           Obx(() => Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceEvenly,
